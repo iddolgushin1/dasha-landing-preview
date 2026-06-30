@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дарья Бугаева — Земельный юрист в Ленобласти</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0D0D0D;font-family:'Inter',system-ui,sans-serif}
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(13,13,13,.96);border-top:1px solid rgba(201,168,76,.2);backdrop-filter:blur(12px);padding:12px 24px;display:flex;align-items:center;justify-content:center;gap:20px;transform:translateY(100%);transition:transform .4s ease}
+.sticky.on{transform:translateY(0)}
+.sticky__txt{font-size:14px;color:#8A8A7E}
+.sticky__btn{display:inline-flex;align-items:center;gap:10px;background:#C9A84C;color:#0D0D0D;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.04em;padding:12px 28px;white-space:nowrap;transition:background .2s;border:none}
+.sticky__btn:hover{background:#B8942E}
+.sticky__x{background:none;border:none;cursor:pointer;color:#4A4A40;font-size:22px;line-height:1;padding:4px;transition:color .2s;flex-shrink:0}
+.sticky__x:hover{color:#9A9A8E}
+.cta-gold{display:inline-flex;align-items:center;gap:14px;background:#C9A84C;color:#0D0D0D;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.04em;padding:18px 36px;border:none;transition:background .25s,gap .25s}
+.cta-gold:hover{background:#B8942E;gap:20px}
+.cta-ghost{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(201,168,76,.4);color:#C9A84C;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.04em;padding:17px 32px;background:transparent}
+.cta-ghost:hover{border-color:#C9A84C;color:#E0C070}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.b1{background:#0D0D0D;min-height:100vh;display:flex;overflow:hidden}
+.b1__in{display:grid;grid-template-columns:55% 45%;width:100%;max-width:1300px;margin:0 auto;padding:0 48px}
+.b1__l{display:flex;flex-direction:column;justify-content:center;padding:100px 80px 100px 0}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:36px}
+.tag::before{content:'';width:28px;height:1px;background:#C9A84C;display:block}
+.b1__h1{font-family:'Playfair Display',serif;font-size:clamp(36px,3.6vw,56px);font-weight:700;line-height:1.12;color:#F5F5F0;margin:0 0 20px;letter-spacing:-.02em}
+.b1__it{font-family:'Playfair Display',serif;font-size:clamp(15px,1.4vw,19px);font-weight:700;font-style:italic;line-height:1.45;color:#C9A84C;margin:0 0 28px;max-width:460px}
+.b1__bd{font-size:15px;font-weight:300;line-height:1.8;color:#9A9A8E;margin:0 0 52px;max-width:420px}
+.b1__bd strong{color:#D8D8CC;font-weight:400}
+.stats{display:flex;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:22px 0;margin-bottom:52px}
+.stat{flex:1;padding-right:24px;border-right:1px solid rgba(255,255,255,.07)}
+.stat:last-child{border-right:none;padding-right:0;padding-left:24px}
+.stat:nth-child(2){padding-left:24px}
+.stat__n{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#F0F0E8;line-height:1;margin-bottom:6px}
+.stat__l{font-size:11px;color:#5A5A50;line-height:1.4;letter-spacing:.03em}
+.b1__r{position:relative;overflow:hidden;background:#0D0D0D}
+.b1__img{width:100%;height:100%;min-height:100vh;object-fit:cover;object-position:center center;display:block;filter:brightness(.92) contrast(1.03)}
+.b1__fade{position:absolute;inset:0;background:linear-gradient(to right,#0D0D0D 0%,rgba(13,13,13,.55) 18%,transparent 48%),linear-gradient(to bottom,#0D0D0D 0%,transparent 12%,transparent 88%,#0D0D0D 100%);pointer-events:none}
+.sec{padding:120px 48px}
+.sec--dark{background:#0D0D0D}
+.sec--soft{background:#111}
+.lbl{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px}
+.h2{font-family:'Playfair Display',serif;font-size:clamp(32px,3vw,52px);font-weight:700;line-height:1.08;color:#F5F5F0;letter-spacing:-.01em}
+.about__in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about__pw{position:relative}
+.about__img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
+.about__border{position:absolute;inset:-12px;border:1px solid rgba(201,168,76,.12);pointer-events:none;z-index:-1}
+.about__name{font-family:'Playfair Display',serif;font-size:clamp(32px,3vw,48px);font-weight:700;color:#F5F5F0;margin-bottom:8px;letter-spacing:-.01em;line-height:1.1}
+.about__role{font-size:14px;color:#C9A84C;margin-bottom:28px;letter-spacing:.03em}
+.about__tx{font-size:15px;font-weight:300;line-height:1.85;color:#A8A89C;margin-bottom:32px}
+.about__tx strong{color:#D8D8CC;font-weight:400}
+.edu{display:flex;flex-direction:column;gap:0}
+.edu__item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.edu__item:first-child{border-top:1px solid rgba(255,255,255,.06)}
+.edu__ic{width:32px;height:32px;min-width:32px;border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;color:#C9A84C;font-size:13px;font-weight:600;font-family:'Playfair Display',serif}
+.edu__tx{font-size:14px;font-weight:300;line-height:1.5;color:#A8A89C;padding-top:5px}
+.edu__tx strong{color:#E8E8DC;font-weight:500}
+.team__in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:center}
+.team__num{font-family:'Playfair Display',serif;font-size:clamp(72px,9vw,130px);font-weight:900;color:#C9A84C;line-height:.85;letter-spacing:-.03em}
+.team__num-l{font-size:14px;color:#9A9A8E;margin-top:16px;letter-spacing:.04em;line-height:1.5}
+.team__roles{list-style:none}
+.team__role{display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:16px;font-weight:300;color:#C8C8BC}
+.team__role:first-child{border-top:1px solid rgba(255,255,255,.06)}
+.team__role::before{content:'→';color:#C9A84C;flex-shrink:0}
+.team__foot{font-size:15px;font-weight:300;color:#9A9A8E;line-height:1.7;margin-top:28px}
+.team__foot strong{color:#C8C8BC;font-weight:400}
+.prob__in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.prob__tx{font-size:15px;font-weight:300;line-height:1.8;color:#A8A89C;margin:28px 0 36px}
+.prob__tx strong{color:#D8D8CC;font-weight:400}
+.quote{border-left:2px solid rgba(201,168,76,.35);padding:4px 0 4px 20px}
+.quote p{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;line-height:1.7;color:#A8A89C;margin:0 0 10px}
+.quote cite{font-size:12px;color:#6A6A5E;letter-spacing:.06em}
+.list{list-style:none}
+.li{display:flex;align-items:flex-start;gap:18px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.05);transition:border-color .2s}
+.li:first-child{border-top:1px solid rgba(255,255,255,.05)}
+.li:hover{border-bottom-color:rgba(201,168,76,.12)}
+.li__ic{width:28px;height:28px;min-width:28px;border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;margin-top:1px;flex-shrink:0;transition:border-color .2s}
+.li:hover .li__ic{border-color:rgba(201,168,76,.5)}
+.li__ic svg{width:12px;height:12px;stroke:#C9A84C;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.li__t{font-size:15px;font-weight:300;line-height:1.65;color:#B0B0A4}
+.li__t strong{color:#E0E0D4;font-weight:500}
+.cases__hd{max-width:1100px;margin:0 auto 56px}
+.cases__sub{font-size:15px;font-weight:300;color:#9A9A8E;margin-top:14px}
+.cases__grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.card{background:#141414;padding:40px 36px;border:1px solid rgba(255,255,255,.05);display:flex;flex-direction:column;transition:border-color .25s,background .25s}
+.card:hover{background:#161616;border-color:rgba(201,168,76,.15)}
+.card__n{font-family:'Playfair Display',serif;font-size:clamp(36px,3.5vw,52px);font-weight:900;color:#C9A84C;line-height:1;margin-bottom:8px;letter-spacing:-.02em}
+.card__lb{font-size:13px;color:#6A6A5E;margin-bottom:28px;line-height:1.4}
+.card__div{width:32px;height:1px;background:rgba(201,168,76,.25);margin-bottom:20px}
+.card__tx{font-size:14px;font-weight:300;line-height:1.75;color:#9A9A8E;margin-bottom:24px;flex:1}
+.card__tx strong{color:#C8C8BC;font-weight:400}
+.card__pl{font-size:11px;color:#5A5A50;letter-spacing:.06em}
+.quiz__in{max-width:720px;margin:0 auto}
+.quiz__hd{text-align:center;margin-bottom:56px}
+.quiz__h2{font-family:'Playfair Display',serif;font-size:clamp(28px,2.8vw,42px);font-weight:700;line-height:1.15;color:#F5F5F0;margin:12px 0;letter-spacing:-.01em}
+.quiz__sub{font-size:15px;font-weight:300;color:#9A9A8E}
+.qwrap{background:#0D0D0D;border:1px solid rgba(255,255,255,.08);padding:48px}
+.prog{display:flex;gap:4px;margin-bottom:6px}
+.prog__d{height:2px;flex:1;background:rgba(255,255,255,.08);transition:background .3s}
+.prog__d.on{background:#C9A84C}
+.prog__lb{font-size:11px;color:#5A5A50;text-align:right;margin-bottom:32px}
+.qstep{display:none}
+.qstep.on{display:block}
+.q__tx{font-family:'Playfair Display',serif;font-size:clamp(18px,1.8vw,24px);font-weight:700;color:#F0F0E8;margin-bottom:28px;line-height:1.3}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:border-color .2s,background .2s;font-size:14px;font-weight:300;color:#B0B0A4}
+.opt:hover{border-color:rgba(201,168,76,.35);color:#D8D8CC}
+.opt.sel{border-color:#C9A84C;color:#F0F0E8;background:rgba(201,168,76,.06)}
+.opt__dot{width:16px;height:16px;min-width:16px;border:1px solid rgba(255,255,255,.2);border-radius:50%;transition:border-color .2s,background .2s;flex-shrink:0}
+.opt.sel .opt__dot{border-color:#C9A84C;background:#C9A84C}
+.q__err{font-size:12px;color:#C9A84C;margin-top:8px;display:none}
+.qfields{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+.qin{background:#161616;border:1px solid rgba(255,255,255,.1);color:#F0F0E8;padding:14px 18px;font-size:14px;font-family:'Inter',sans-serif;outline:none;width:100%;transition:border-color .2s}
+.qin:focus{border-color:rgba(201,168,76,.5)}
+.qhint{font-size:14px;color:#8A8A7E;margin-bottom:24px;font-weight:300}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:32px}
+.btn-next{display:inline-flex;align-items:center;gap:10px;background:#C9A84C;color:#0D0D0D;border:none;cursor:pointer;font-size:14px;font-weight:500;letter-spacing:.04em;padding:14px 28px;transition:background .2s;font-family:'Inter',system-ui,sans-serif}
+.btn-next:hover{background:#B8942E}
+.btn-back{background:none;border:none;cursor:pointer;font-size:13px;color:#5A5A50;font-family:'Inter',system-ui,sans-serif;transition:color .2s}
+.btn-back:hover{color:#9A9A8E}
+.qresult{display:none;text-align:center;padding:20px 0}
+.qresult.on{display:block}
+.qresult__ic{font-size:40px;margin-bottom:20px}
+.qresult__ti{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#F5F5F0;margin-bottom:12px}
+.qresult__tx{font-size:15px;font-weight:300;color:#9A9A8E;line-height:1.7;margin-bottom:32px}
+.btn-tg{display:inline-flex;align-items:center;gap:10px;background:#C9A84C;color:#0D0D0D;text-decoration:none;font-size:14px;font-weight:500;padding:16px 32px;border:none}
+.btn-tg:hover{background:#B8942E}
+.btn-restart{background:none;border:none;cursor:pointer;font-size:13px;color:#5A5A50;font-family:'Inter',system-ui,sans-serif;margin-top:16px;display:block;width:100%;text-align:center}
+.btn-restart:hover{color:#9A9A8E}
+.proc__in{max-width:1100px;margin:0 auto}
+.proc__top{margin-bottom:72px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{background:#141414;padding:36px 28px;border:1px solid rgba(255,255,255,.05);transition:border-color .25s;position:relative}
+.step:not(:last-child)::after{content:'→';position:absolute;right:-12px;top:36px;color:rgba(201,168,76,.25);font-size:16px;z-index:1}
+.step:hover{border-color:rgba(201,168,76,.12)}
+.step__n{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:rgba(201,168,76,.12);line-height:1;margin-bottom:20px}
+.step__ti{font-size:15px;font-weight:500;color:#E0E0D4;margin-bottom:12px;line-height:1.3}
+.step__tx{font-size:14px;font-weight:300;line-height:1.75;color:#9A9A8E}
+.step__tx strong{color:#C8C8BC;font-weight:400}
+.tg__in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+.iphone{position:relative;width:260px;margin:0 auto;filter:drop-shadow(0 32px 64px rgba(0,0,0,.6))}
+.iphone__frame{background:#1A1A1A;border-radius:44px;padding:12px;border:2px solid #2A2A2A;position:relative}
+.iphone__frame::before{content:'';position:absolute;top:12px;left:50%;transform:translateX(-50%);width:90px;height:28px;background:#1A1A1A;border-radius:0 0 18px 18px;z-index:2}
+.iphone__frame::after{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);width:10px;height:10px;background:#0D0D0D;border-radius:50%;z-index:3}
+.iphone__screen{border-radius:34px;overflow:hidden;aspect-ratio:9/19.5;background:#000;position:relative}
+.iphone__screen img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.iphone::before{content:'';position:absolute;left:-4px;top:80px;width:3px;height:30px;background:#222;border-radius:2px}
+.iphone::after{content:'';position:absolute;right:-4px;top:100px;width:3px;height:50px;background:#222;border-radius:2px}
+.tg__stats{display:flex;gap:40px;margin:28px 0 36px}
+.tg__stat-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F0F0E8;line-height:1;margin-bottom:6px}
+.tg__stat-l{font-size:12px;color:#6A6A5E;letter-spacing:.04em}
+.tg__list{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.tg__item{display:flex;align-items:flex-start;gap:12px;font-size:14px;font-weight:300;color:#A8A89C;line-height:1.5}
+.tg__item::before{content:'→';color:#C9A84C;flex-shrink:0;margin-top:1px}
+.srv__in{max-width:1100px;margin:0 auto}
+.srv__top{margin-bottom:16px}
+.srv__sub{font-size:15px;font-weight:300;color:#9A9A8E;margin:16px 0 56px;max-width:560px}
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.srv-card{background:#141414;padding:28px 24px 24px;border:1px solid rgba(255,255,255,.05);transition:border-color .25s,background .25s;cursor:default}
+.srv-card:hover{background:#161616;border-color:rgba(201,168,76,.12)}
+.srv-ic{width:32px;height:32px;margin-bottom:16px;opacity:.5}
+.srv-ic svg{width:32px;height:32px;stroke:#C9A84C;fill:none;stroke-width:1.5;stroke-linecap:round}
+.srv-ti{font-size:14px;font-weight:500;color:#D8D8CC;margin-bottom:8px;line-height:1.3}
+.srv-tx{font-size:13px;font-weight:300;color:#8A8A7E;line-height:1.5}
+.srv__foot{margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.srv__foot-tx{font-size:14px;font-weight:300;color:#9A9A8E}
+.srv__foot-tx strong{color:#C8C8BC;font-weight:400}
+.faq__in{max-width:800px;margin:0 auto}
+.faq__top{margin-bottom:56px}
+.faq{border-bottom:1px solid rgba(255,255,255,.06)}
+.faq:first-child{border-top:1px solid rgba(255,255,255,.06)}
+.faq__q{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;text-align:left;font-size:15px;font-weight:400;color:#D8D8CC;font-family:'Inter',system-ui,sans-serif;transition:color .2s}
+.faq__q:hover{color:#F0F0E8}
+.faq__ic{width:24px;height:24px;min-width:24px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:border-color .2s,transform .3s}
+.faq__ic svg{width:10px;height:10px;stroke:#C9A84C;fill:none;stroke-width:2;stroke-linecap:round}
+.faq.open .faq__ic{transform:rotate(45deg);border-color:rgba(201,168,76,.4)}
+.faq__a{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.faq__ai{font-size:14px;font-weight:300;line-height:1.8;color:#9A9A8E;padding-bottom:24px;max-width:680px}
+.faq__ai strong{color:#C8C8BC;font-weight:400}
+.faq.open .faq__a{max-height:400px}
+.fin{background:#0D0D0D;padding:120px 48px;text-align:center;position:relative;overflow:hidden}
+.fin::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.05) 0%,transparent 70%);pointer-events:none}
+.fin__in{max-width:560px;margin:0 auto;position:relative;z-index:1}
+.fin__av{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(201,168,76,.3);margin:0 auto 20px;display:block}
+.fin__h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,46px);font-weight:700;line-height:1.15;color:#F5F5F0;margin-bottom:20px;letter-spacing:-.01em}
+.fin__tx{font-size:16px;font-weight:300;line-height:1.75;color:#9A9A8E;margin-bottom:44px}
+.fin__ct{margin-top:28px;font-size:13px;color:#5A5A50}
+.fin__ct a{color:#9A9A8E;text-decoration:none}
+.fin__ct a:hover{color:#C9A84C}
+@media(max-width:768px){
+  .b1__in{grid-template-columns:1fr;padding:0}
+  .b1__r{order:-1;height:70vw;min-height:340px}
+  .b1__img{min-height:0;height:100%}
+  .b1__fade{background:linear-gradient(to bottom,#0D0D0D 0%,transparent 18%,transparent 72%,#0D0D0D 100%)}
+  .b1__l{padding:36px 24px 60px}
+  .cta-gold,.cta-ghost{width:100%;justify-content:center}
+  .sec,.fin{padding:72px 24px}
+  .about__in,.prob__in,.team__in,.tg__in{grid-template-columns:1fr;gap:48px}
+  .cases__grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:not(:last-child)::after{display:none}
+  .qwrap{padding:28px 20px}
+  .iphone{width:220px}
+  .about__pw{order:-1}
+  .srv-grid{grid-template-columns:1fr 1fr}
+  .srv__foot{flex-direction:column;align-items:flex-start}
+  .team__num{font-size:80px}
+}
+</style>
+</head>
+<body>
+
+<div class="sticky" id="stickyBar">
+  <span class="sticky__txt">Есть вопрос по участку?</span>
+  <a href="https://t.me/DariaBugaevaQ" class="sticky__btn" target="_blank">Задать вопрос →</a>
+  <button class="sticky__x" onclick="closeSticky()">×</button>
+</div>
+
+<!-- 1. HERO -->
+<section class="b1">
+  <div class="b1__in">
+    <div class="b1__l">
+      <div class="tag">Дарья Бугаева · Земельный юрист · Ленобласть и СПб</div>
+      <h1 class="b1__h1">Изменю ВРИ и категорию земли в Ленобласти — чтобы на вашем участке можно было строить</h1>
+      <p class="b1__it">Изменение ВРИ · перевод категории · споры с администрацией</p>
+      <p class="b1__bd">10 лет в земельном праве.<br><strong>Решаю задачи, которые другие юристы считают тупиком.</strong></p>
+      <div class="stats">
+        <div class="stat"><div class="stat__n">10 лет</div><div class="stat__l">в земельном праве</div></div>
+        <div class="stat"><div class="stat__n">50+</div><div class="stat__l">кейсов по изменению<br>назначения земли</div></div>
+        <div class="stat"><div class="stat__n">10+</div><div class="stat__l">специалистов<br>в команде</div></div>
+      </div>
+      <div class="cta-row">
+        <a href="https://t.me/DariaBugaevaQ" class="cta-gold" target="_blank">Задать вопрос <span>→</span></a>
+      </div>
+    </div>
+    <div class="b1__r">
+      <img src="dasha-about.jpg" alt="Дарья Бугаева" class="b1__img">
+      <div class="b1__fade"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. ABOUT -->
+<section class="sec sec--soft">
+  <div class="about__in">
+    <div class="about__pw">
+      <img src="dasha-cta.jpg" alt="Дарья Бугаева" class="about__img">
+      <div class="about__border"></div>
+    </div>
+    <div>
+      <div class="lbl">Кто я</div>
+      <h2 class="about__name">Дарья<br>Бугаева</h2>
+      <div class="about__role">Президент Ассоциации земельных юристов России</div>
+      <p class="about__tx">Я пришла в землю не из кабинета. Сначала — инженерное образование, поэтому понимаю не только документы, но и саму стройку: коммуникации, проектирование, как объект реально встаёт на участок. Потом — юриспруденция. Земельный вопрос вижу целиком, с двух сторон сразу — и со стороны закона, и со стороны стройки.</p>
+      <div class="edu">
+        <div class="edu__item"><div class="edu__ic">1</div><div class="edu__tx"><strong>Инженерное образование</strong> — разбираюсь не только в документах, но в стройке, коммуникациях и проектировании</div></div>
+        <div class="edu__item"><div class="edu__ic">2</div><div class="edu__tx"><strong>РАНХиГС</strong> — юриспруденция</div></div>
+        <div class="edu__item"><div class="edu__ic">3</div><div class="edu__tx"><strong>СПбГАУ</strong> — красный диплом, земельное и экологическое право</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. TEAM -->
+<section class="sec sec--dark">
+  <div class="team__in">
+    <div>
+      <div class="team__num">10+</div>
+      <div class="team__num-l">специалистов в команде</div>
+    </div>
+    <div>
+      <div class="lbl">Команда</div>
+      <h2 class="h2" style="margin-bottom:24px">Со мной работает команда</h2>
+      <ul class="team__roles">
+        <li class="team__role">Кадастровые инженеры</li>
+        <li class="team__role">Юристы по смежному праву</li>
+        <li class="team__role">Юристы по недрам</li>
+        <li class="team__role">И другие профильные специалисты</li>
+      </ul>
+      <p class="team__foot">Сложные земельные вопросы — не работа одного человека. Под вашу задачу подключаются нужные специалисты. <strong>Вы получаете не одного юриста, а полный профиль под проект.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROBLEM -->
+<section class="sec sec--soft">
+  <div class="prob__in">
+    <div>
+      <div class="lbl">У вас проблема?</div>
+      <h2 class="h2">Участок есть.<br>Строить нельзя.</h2>
+      <p class="prob__tx">Категория не та. ВРИ не подходит. Зона не позволяет. Администрация отказывает.<br><br>А пока всё стоит — <strong>деньги заморожены, сроки горят, участок не работает.</strong> Кажется, что выхода нет. Почти всегда он есть.</p>
+      <blockquote class="quote">
+        <p>За 10 лет практики я не встречала ситуации, где не было бы хотя бы трёх вариантов решения. Один из них — всегда рабочий.</p>
+        <cite>— Дарья Бугаева</cite>
+      </blockquote>
+    </div>
+    <ul class="list">
+      <li class="li"><div class="li__ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="li__t">Нашли участок с хорошей локацией — <strong>но ВРИ или категория не дают построить нужный объект</strong></span></li>
+      <li class="li"><div class="li__ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="li__t"><strong>Администрация отказала</strong> — а вы не понимаете, законно это или можно оспорить</span></li>
+      <li class="li"><div class="li__ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="li__t">Слышали, что перевод категории — это годы и миллионы. <strong>И не знаете, стоит ли начинать</strong></span></li>
+      <li class="li"><div class="li__ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="li__t">Уже работали с юристом-универсалом — <strong>он взялся, но результата нет месяцами</strong></span></li>
+      <li class="li"><div class="li__ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="li__t"><strong>Проект завис:</strong> вложения не двигаются, а земля просто стоит</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. CASES -->
+<section class="sec sec--dark" id="cases">
+  <div class="cases__hd">
+    <div class="lbl">Кейсы из практики</div>
+    <h2 class="h2">Чем закончились реальные дела</h2>
+  </div>
+  <div class="cases__grid">
+    <div class="card"><div class="card__n">1 150 ₽</div><div class="card__lb">стоимость участка под рекреацию<br>в собственности</div><div class="card__div"></div><p class="card__tx">Клиент хотел оформить землю у воды. Администрация: только через торги, старт 250 000 ₽. Разобрались — участок в сельхозаренде больше 3 лет, есть право на льготный выкуп. <strong>Выкуп без торгов. Договор подписан.</strong></p><div class="card__pl">Приморский край · Рекреация</div></div>
+    <div class="card"><div class="card__n">×8</div><div class="card__lb">рост стоимости участка<br>после смены ВРИ</div><div class="card__div"></div><p class="card__tx">Девелопер купил сельхозземлю у трассы под логистику — ВРИ строить не давал. Выяснилось: данные в реестре не совпадали с реальностью. <strong>Новый ВРИ — за 45 дней.</strong></p><div class="card__pl">Московская область · Логистика</div></div>
+    <div class="card"><div class="card__n">4 мес.</div><div class="card__lb">вместо двух лет<br>ожидания</div><div class="card__div"></div><p class="card__tx">Клиент полтора года не мог получить разрешение на гостевой дом. Прежний юрист твердил: нужен перевод категории. Хватило смены ВРИ без суда. <strong>Решение — за 4 месяца.</strong></p><div class="card__pl">Ленинградская область · Гостевой дом</div></div>
+  </div>
+</section>
+
+<!-- 6. QUIZ -->
+<section class="sec sec--soft" id="quiz">
+  <div class="quiz__in">
+    <div class="quiz__hd">
+      <div class="lbl">Бесплатно</div>
+      <h2 class="quiz__h2">Пройди тест и получи<br>бесплатный разбор</h2>
+      <p class="quiz__sub">Ответьте на 5 вопросов — скажу честно, реально ли решить ваш вопрос и каким путём</p>
+    </div>
+    <div class="qwrap">
+      <div class="prog"><div class="prog__d on" id="d1"></div><div class="prog__d" id="d2"></div><div class="prog__d" id="d3"></div><div class="prog__d" id="d4"></div><div class="prog__d" id="d5"></div><div class="prog__d" id="d6"></div></div>
+      <div class="prog__lb" id="plb">Вопрос 1 из 5</div>
+
+      <div class="qstep on" id="s1">
+        <div class="q__tx">Что хотите построить на участке?</div>
+        <div class="opts">
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Склад, производство или логистику</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Магазин, офис или торговый объект</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Отель, гостевой дом или базу отдыха</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Жилой дом или апартаменты</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Другое — опишу в Telegram</div>
+        </div>
+        <div class="q__err" id="e1">Пожалуйста, выберите вариант</div>
+        <div class="qnav"><div></div><button class="btn-next" onclick="nxt(1,2)">Далее →</button></div>
+      </div>
+
+      <div class="qstep" id="s2">
+        <div class="q__tx">В чём проблема прямо сейчас?</div>
+        <div class="opts">
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>ВРИ не даёт построить нужный объект</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Категория земли не та</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Документы противоречат друг другу (ЕГРН и ПЗЗ)</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Администрация уже отказала</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Не знаю точно — нужна проверка</div>
+        </div>
+        <div class="q__err" id="e2">Пожалуйста, выберите вариант</div>
+        <div class="qnav"><button class="btn-back" onclick="bk(1)">← Назад</button><button class="btn-next" onclick="nxt(2,3)">Далее →</button></div>
+      </div>
+
+      <div class="qstep" id="s3">
+        <div class="q__tx">Какой статус участка?</div>
+        <div class="opts">
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>В моей собственности</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>В аренде у государства или муниципалитета</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Рассматриваю покупку — ещё не оформлен</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Используется, но документы не оформлены</div>
+        </div>
+        <div class="q__err" id="e3">Пожалуйста, выберите вариант</div>
+        <div class="qnav"><button class="btn-back" onclick="bk(2)">← Назад</button><button class="btn-next" onclick="nxt(3,4)">Далее →</button></div>
+      </div>
+
+      <div class="qstep" id="s4">
+        <div class="q__tx">Текущая категория земли?</div>
+        <div class="opts">
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Сельхозназначения (СХ)</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Земли населённых пунктов, но зона не та</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Промышленность или иное назначение</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Не знаю / не указано в документах</div>
+        </div>
+        <div class="q__err" id="e4">Пожалуйста, выберите вариант</div>
+        <div class="qnav"><button class="btn-back" onclick="bk(3)">← Назад</button><button class="btn-next" onclick="nxt(4,5)">Далее →</button></div>
+      </div>
+
+      <div class="qstep" id="s5">
+        <div class="q__tx">Что уже пробовали?</div>
+        <div class="opts">
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Ничего — только изучаю</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Обращались в администрацию — отказ</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Работали с юристом — без результата</div>
+          <div class="opt" onclick="pick(this)"><div class="opt__dot"></div>Был суд или подавали жалобы</div>
+        </div>
+        <div class="q__err" id="e5">Пожалуйста, выберите вариант</div>
+        <div class="qnav"><button class="btn-back" onclick="bk(4)">← Назад</button><button class="btn-next" onclick="nxt(5,6)">Далее →</button></div>
+      </div>
+
+      <div class="qstep" id="s6">
+        <div class="q__tx">Куда отправить разбор?</div>
+        <p class="qhint">Изучу ситуацию и напишу вам напрямую</p>
+        <div class="qfields">
+          <input id="qname" type="text" placeholder="Ваше имя" class="qin">
+          <input id="qcontact" type="text" placeholder="Telegram или номер телефона" class="qin">
+        </div>
+        <div class="q__err" id="e6">Пожалуйста, укажите имя и контакт</div>
+        <div class="qnav"><button class="btn-back" onclick="bk(5)">← Назад</button><button class="btn-next" onclick="fin()">Получить разбор →</button></div>
+      </div>
+
+      <div class="qresult" id="qres">
+        <div class="qresult__ic">✓</div>
+        <div class="qresult__ti">Отлично!</div>
+        <p class="qresult__tx">Нажмите кнопку ниже — Telegram откроется с вашими ответами.<br>Получу всё сразу и напишу в ближайший рабочий день.</p>
+        <a id="tgLink" href="#" class="btn-tg" target="_blank">Отправить заявку →</a>
+        <button class="btn-restart" onclick="rst()">← Пройти заново</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PROCESS -->
+<section class="sec sec--dark">
+  <div class="proc__in">
+    <div class="proc__top"><div class="lbl">Как работаем</div><h2 class="h2">От вопроса до результата</h2></div>
+    <div class="steps">
+      <div class="step"><div class="step__n">01</div><div class="step__ti">Консультация</div><p class="step__tx">Разбираем вашу ситуацию. <strong>Бесплатна при заказе услуги</strong> — оплата за неё идёт в счёт аванса по договору.</p></div>
+      <div class="step"><div class="step__n">02</div><div class="step__ti">Стратегия</div><p class="step__tx">Иногда хватает одного заявления и 45 дней. Иногда нужен суд. <strong>Скажу честно, что в вашем случае</strong> — и почему.</p></div>
+      <div class="step"><div class="step__n">03</div><div class="step__ti">Веду дело</div><p class="step__tx">Готовлю документы, веду переговоры с администрацией и ведомствами. <strong>Вы заняты делом — землёй занимаюсь я.</strong></p></div>
+      <div class="step"><div class="step__n">04</div><div class="step__ti">Результат в ЕГРН</div><p class="step__tx">Новый ВРИ или категория — <strong>официально в реестре.</strong> Участок готов под стройку.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. TELEGRAM -->
+<section class="sec sec--soft">
+  <div class="tg__in">
+    <div class="iphone">
+      <div class="iphone__frame"><div class="iphone__screen"><img src="tg-channel.jpg" alt="Telegram канал Дарья про землю" loading="lazy"></div></div>
+    </div>
+    <div>
+      <div class="lbl">Живые кейсы</div>
+      <h2 class="h2" style="margin-bottom:0">Все кейсы и отзывы —<br>в моём канале</h2>
+      <div class="tg__stats">
+        <div><div class="tg__stat-n">2 178</div><div class="tg__stat-l">подписчиков</div></div>
+        <div><div class="tg__stat-n">3 года</div><div class="tg__stat-l">веду канал</div></div>
+      </div>
+      <div class="tg__list">
+        <div class="tg__item">Разборы реальных дел — как они идут изнутри</div>
+        <div class="tg__item">Отзывы клиентов после завершённых кейсов</div>
+        <div class="tg__item">Что меняется в земельном законодательстве</div>
+        <div class="tg__item">Честно — когда дело сложное и простого пути нет</div>
+      </div>
+      <a href="https://t.me/DariaBugaevaQ" class="cta-gold" target="_blank">Перейти в канал <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 9. SERVICES -->
+<section class="sec sec--dark">
+  <div class="srv__in">
+    <div class="srv__top"><div class="lbl">Также работаю с</div><h2 class="h2">Другие земельные вопросы</h2></div>
+    <p class="srv__sub">Изменение ВРИ — основная специализация. Но земельное право шире. Часть услуг веду по всей России удалённо.</p>
+    <div class="srv-grid">
+      <div class="srv-card"><div class="srv-ic"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div class="srv-ti">Снижение кадастровой стоимости</div><div class="srv-tx">Уменьшаю налог на землю до реальной цены</div></div>
+      <div class="srv-card"><div class="srv-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="srv-ti">Проверка участка перед покупкой</div><div class="srv-tx">Нахожу риски до сделки — чтобы не потерять деньги</div></div>
+      <div class="srv-card"><div class="srv-ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="srv-ti">Споры с администрацией</div><div class="srv-tx">Незаконный отказ — иду в суд и выигрываю</div></div>
+      <div class="srv-card"><div class="srv-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="srv-ti">Судебные земельные споры</div><div class="srv-tx">Защита прав на землю в любой инстанции</div></div>
+      <div class="srv-card"><div class="srv-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div class="srv-ti">Оформление сервитута</div><div class="srv-tx">Законный доступ к участку через чужую землю</div></div>
+      <div class="srv-card"><div class="srv-ic"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="srv-ti">Узаконивание самозахвата</div><div class="srv-tx">Оформляю землю, что используется без документов</div></div>
+      <div class="srv-card"><div class="srv-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="srv-ti">Споры с Росреестром</div><div class="srv-tx">Исправляю ошибки и расхождения в реестре</div></div>
+      <div class="srv-card"><div class="srv-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="srv-ti">Сопровождение сделок</div><div class="srv-tx">Полное юридическое сопровождение покупки и продажи</div></div>
+    </div>
+    <div class="srv__foot">
+      <p class="srv__foot-tx">Вопрос не из списка? <strong>Напишите — скажу честно, смогу ли помочь.</strong></p>
+      <a href="https://t.me/DariaBugaevaQ" class="cta-ghost" target="_blank">Задать вопрос →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="sec sec--soft">
+  <div class="faq__in">
+    <div class="faq__top"><div class="lbl">Вопросы и ответы</div><h2 class="h2">Частые вопросы</h2></div>
+    <div class="faq open"><button class="faq__q" onclick="tfaq(this)">Сколько стоит изменение ВРИ или категории?<div class="faq__ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button><div class="faq__a"><div class="faq__ai">Точную сумму называю после разбора ситуации. Она зависит от пути: административный — одна цена, судебный — другая. Консультация бесплатна при заказе услуги, а оплата за неё идёт в аванс по договору. <strong>Разница в стоимости участка до и после изменения ВРИ обычно перекрывает работу в несколько раз.</strong></div></div></div>
+    <div class="faq"><button class="faq__q" onclick="tfaq(this)">Сколько занимает процедура?<div class="faq__ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button><div class="faq__a"><div class="faq__ai">Без суда — <strong>30–90 дней.</strong> Через суд — 6–18 месяцев. После разбора назову реальный срок именно для вашего случая.</div></div></div>
+    <div class="faq"><button class="faq__q" onclick="tfaq(this)">Даёте гарантии результата?<div class="faq__ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button><div class="faq__a"><div class="faq__ai">Честно: 100% гарантировать нельзя — финальное решение за госорганом. Но <strong>о шансах я говорю прямо до начала работы.</strong> Если дело безнадёжное — скажу сразу, а не возьму деньги и не буду тянуть.</div></div></div>
+    <div class="faq"><button class="faq__q" onclick="tfaq(this)">А если участок не в Ленобласти?<div class="faq__ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button><div class="faq__a"><div class="faq__ai">Часть услуг — например, снижение кадастровой стоимости — веду по всей России удалённо. По изменению ВРИ и категории напишите: <strong>подскажу, берусь ли за ваш регион.</strong></div></div></div>
+    <div class="faq"><button class="faq__q" onclick="tfaq(this)">Администрация уже отказала — есть смысл обращаться?<div class="faq__ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button><div class="faq__a"><div class="faq__ai">Отказ — не приговор. <strong>Большая часть отказов либо незаконна, либо обжалуется.</strong> Пришлите документ — разберу и скажу, есть ли путь дальше.</div></div></div>
+  </div>
+</section>
+
+<!-- 11. FINAL -->
+<section class="fin">
+  <div class="fin__in">
+    <img src="dasha-hero.jpg" alt="Дарья Бугаева" class="fin__av" loading="lazy">
+    <div class="lbl">Начните сейчас</div>
+    <h2 class="fin__h2">Один разговор — и вы знаете,<br>можно ли строить на вашей земле</h2>
+    <p class="fin__tx">Опишите участок — скажу честно, реально ли изменить ВРИ и сколько это займёт. Без общих слов и обещаний невозможного.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a href="#quiz" class="cta-gold">Пройти тест →</a>
+      <a href="https://t.me/DariaBugaevaQ" class="cta-ghost" target="_blank">Задать вопрос →</a>
+    </div>
+    <p class="fin__ct">Личный Telegram: <a href="https://t.me/DariaBugaevaQ">@DariaBugaevaQ</a></p>
+  </div>
+</section>
+
+<script>
+let sOff=false;
+window.addEventListener('scroll',function(){if(sOff)return;var b=document.getElementById('stickyBar');if(b)b.classList.toggle('on',window.scrollY>600)});
+function closeSticky(){sOff=true;var b=document.getElementById('stickyBar');if(b)b.classList.remove('on')}
+var ans={};
+function pick(el){el.closest('.opts').querySelectorAll('.opt').forEach(function(o){o.classList.remove('sel')});el.classList.add('sel');var s=el.closest('.qstep');if(s){var e=document.getElementById('e'+s.id.replace('s',''));if(e)e.style.display='none'}}
+function nxt(f,t){var s=document.getElementById('s'+f);var sel=s.querySelector('.opt.sel');if(!sel){document.getElementById('e'+f).style.display='block';return}ans['q'+f]=sel.textContent.trim();document.querySelectorAll('.qstep').forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.prog__d').forEach(function(d,i){d.classList.toggle('on',i<t)});document.getElementById('s'+t).classList.add('on');document.getElementById('plb').textContent=t<=5?'Вопрос '+t+' из 5':'Последний шаг'}
+function bk(t){document.querySelectorAll('.qstep').forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.prog__d').forEach(function(d,i){d.classList.toggle('on',i<t)});document.getElementById('s'+t).classList.add('on');document.getElementById('plb').textContent=t<=5?'Вопрос '+t+' из 5':'Последний шаг'}
+function fin(){var name=document.getElementById('qname').value.trim();var contact=document.getElementById('qcontact').value.trim();if(!name||!contact){document.getElementById('e6').style.display='block';return}var msg='Добрый день! Меня зовут '+name+'.\n\nЗаполнил(а) опрос на сайте, прошу дать обратную связь. Информация ниже:\n\n— Что хочу построить: '+ans['q1']+'\n— В чём проблема: '+ans['q2']+'\n— Статус участка: '+ans['q3']+'\n— Категория земли: '+ans['q4']+'\n— Что уже пробовал(а): '+ans['q5']+'\n\nКонтакт для связи: '+contact;document.getElementById('tgLink').href='https://t.me/DariaBugaevaQ?text='+encodeURIComponent(msg);document.querySelectorAll('.qstep').forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.prog__d').forEach(function(d){d.classList.add('on')});document.getElementById('plb').textContent='Готово!';document.getElementById('qres').classList.add('on')}
+function rst(){ans={};document.querySelectorAll('.qstep').forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.opt').forEach(function(o){o.classList.remove('sel')});document.querySelectorAll('.prog__d').forEach(function(d,i){d.classList.toggle('on',i===0)});document.getElementById('qres').classList.remove('on');document.getElementById('qname').value='';document.getElementById('qcontact').value='';document.getElementById('s1').classList.add('on');document.getElementById('plb').textContent='Вопрос 1 из 5'}
+function tfaq(btn){var i=btn.closest('.faq'),o=i.classList.contains('open');document.querySelectorAll('.faq').forEach(function(x){x.classList.remove('open')});if(!o)i.classList.add('open')}
+</script>
+</body>
+</html>
